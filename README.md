@@ -1,12 +1,13 @@
+### 查看本项目的 slide.md：
+1. 安装项目需要的模块：`npm install`
+2. 查看 ppt 页面，并调试：`./node_modules/nodeppt/bin/nodeppt serve slide.md` 或 `npx nodeppt serve slide.md`
+3. 或直接打开构建好的html页面：dist/slide.html
+
 ### 运行项目步骤：
 1. 安装项目需要的模块：`npm install`
 2. 使用线上模板创建一个新的 md 文件，例如：`./node_modules/nodeppt/bin/nodeppt new your_file_name.md` 或 `npx nodeppt new your_file_name.md`
 3. 查看 ppt 页面，并调试：`./node_modules/nodeppt/bin/nodeppt serve your_file_name.md` 或 `npx nodeppt serve your_file_name.md`
 4. 构建静态 html 页面到 dist 文件夹：`./node_modules/nodeppt/bin/nodeppt build your_file_name.md` 或 `npx nodeppt build your_file_name.md`
-
-### 查看本项目的 slide.md：
-1. 安装项目需要的模块：`npm install`
-2. `./node_modules/nodeppt/bin/nodeppt serve slide.md` 或 `npx nodeppt serve slide.md`
 
 WebRTC API 的使用介绍 | 说明
 --- | ---

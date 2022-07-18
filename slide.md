@@ -9,6 +9,15 @@ plugins:
 
 By 陈安国 {.text-intro}
 
+##### 快捷键：
+* ←/→/空格：翻页
+* ↑/↓：页面里，上移/下移
+* F：全屏
+* ESC：退出全屏
+* -/+：总览模式/退出总览模式
+
+* HOME/END：第一页/最后一页
+
 [comment]: <> ([:fa-github: Github]&#40;https://github.com/cag2050/webrtc_api_introduce_ppt&#41;{.button.ghost})
 
 <slide>
