@@ -89,6 +89,35 @@ A和B通过信令服务器交换会话描述信息，建立网络连接的过程
 
 <slide>
 
+# STUN（Session Traversal Utilities for NAT）
+
+位于NAT网络内的设备能够访问互联网，但并不知道NAT网络的公网IP地址，这时候就需要通过STUN协议实时发现公网IP。
+
+STUN（Session Traversal Utilities for NAT）是一种公网地址及端口的发现协议，客户端向STUN服务发送请求，STUN服务返回客户端的公网地址及NAT网络信息。
+
+对于建立连接的双方都位于对称NAT网络的情况，使用STUN发现网络地址后，仍然无法成功建立连接。这种情况就需要借助TURN协议提供的服务进行流量中转。
+
+<slide>
+
+# TURN（Traversal Using Relays around NAT）
+
+TURN（Traversal Using Relays around NAT）通过数据转发的方式穿透NAT，解决了防火墙和对称NAT的问题。
+
+TURN支持UDP和TCP协议。通信双方借助STUN协议能够在不使用TURN的情况下成功建立P2P连接。如有特殊情况，无法建立P2P连接，则仍需要使用TURN进行数据转发。
+
+<slide>
+
+# STUN 与 TURN 的区别
+
+* 使用STUN建立的是P2P的网络模型，网络连接直接建立在通信两端，没有中间服务器介入；
+* 而使用TURN建立的是流量中继的网络模型，用户两端都与TURN服务建立连接，用户的网络数据包通过TURN服务进行转发。
+
+下图展示了单独使用STUN与结合使用STUN和TURN的对比。
+
+!![](https://res.weread.qq.com/wrepub/epub_37477429_26 .size-100.aligncenter)
+
+<slide>
+
 # RTCPeerConnection接口
 
 WebRTC使用RTCPeerConnection接口来管理对等连接，该接口提供了建立、管理、监控、关闭对等连接的方法。
@@ -112,6 +141,23 @@ interface RTCPeerConnection extends EventTarget {
     ...
 }
 ```
+
+<slide>
+
+# RTCPeerConnection 实例化时的参数：RTCConfiguration
+
+```
+interface RTCConfiguration {
+    bundlePolicy?: RTCBundlePolicy;
+    certificates?: RTCCertificate[];
+    iceCandidatePoolSize?: number;
+    iceServers?: RTCIceServer[];
+    iceTransportPolicy?: RTCIceTransportPolicy;
+    rtcpMuxPolicy?: RTCRtcpMuxPolicy;
+}
+```
+
+!![](https://res.weread.qq.com/wrepub/epub_37477429_34 .size-100.aligncenter)
 
 <slide>
 
