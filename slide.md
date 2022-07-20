@@ -80,6 +80,8 @@ SFU对参与实时互动的人数也有一定的限制，适用于在线教学�
 
 # WebRTC建立连接的过程：ICE建立连接
 
+ICE（Interactive Connectivity Establishment，交互式连接建立协议）是用于提案/应答模式的NAT（网络地址转换）传输协议，主要用于在UDP协议下建立多媒体会话。
+
 当用户A向用户B发起WebRTC呼叫时，A首先创建自己的会话描述信息（SD），我们称之为提案（offer），之后A通过信令服务器将会话描述发送给B。B同样创建自己的会话描述信息，我们称之为应答（answer），B通过信令服务器将其发送给A。这个交换过程由ICE控制，即使是在复杂的网络环境下，ICE也能确保会话描述交换顺利完成。
 
 现在A和B都拥有了自己和对方的会话描述信息，在媒体交换格式方面达成了一致，连接成功，接下来就可以传输媒体数据了。
@@ -286,6 +288,18 @@ navigator.mediaDevices
 # 2个 RTCPeerConnection 实例进行连接的演示
 
 <a href="http://localhost:8081/PeerConnectionCanvas" target="_blank">http://localhost:8081/PeerConnectionCanvas</a>
+
+<slide>
+
+# Chrome浏览器内置：WebRTC工具
+
+chrome://webrtc-internals/
+
+<slide>
+
+# Chrome浏览器内置：媒体数据工具
+
+chrome://media-internals/ ，第3个tab：Video Capture，可查看各视频设备及各视频设备支持的分辨率和帧率
 
 <slide>
 
